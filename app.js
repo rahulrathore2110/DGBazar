@@ -1,65 +1,61 @@
 //step 1: get DOM
-let nextDom = document.getElementById('next');
-let prevDom = document.getElementById('prev');
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
 
-let carouselDom = document.querySelector('.carousel');
-let SliderDom = carouselDom.querySelector('.carousel .list');
-let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-let timeDom = document.querySelector('.carousel .time');
+let carouselDom = document.querySelector(".carousel");
+let SliderDom = carouselDom.querySelector(".carousel .list");
+let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+let timeDom = document.querySelector(".carousel .time");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 2000;
 let timeAutoNext = 7000;
 
-nextDom.onclick = function(){
-    showSlider('next');    
-}
+nextDom.onclick = function () {
+  showSlider("next");
+};
 
-prevDom.onclick = function(){
-    showSlider('prev');    
-}
+prevDom.onclick = function () {
+  showSlider("prev");
+};
 let runTimeOut;
 let runNextAuto = setTimeout(() => {
-    next.click();
-}, timeAutoNext)
-function showSlider(type){
-    let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
-    
-    if(type === 'next'){
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add('next');
-    }else{
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add('prev');
-    }
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-    }, timeRunning);
+  next.click();
+}, timeAutoNext);
+function showSlider(type) {
+  let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
+  let thumbnailItemsDom = document.querySelectorAll(
+    ".carousel .thumbnail .item"
+  );
 
-    clearTimeout(runNextAuto);
-    runNextAuto = setTimeout(() => {
-        next.click();
-    }, timeAutoNext)
+  if (type === "next") {
+    SliderDom.appendChild(SliderItemsDom[0]);
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    carouselDom.classList.add("next");
+  } else {
+    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+    carouselDom.classList.add("prev");
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    carouselDom.classList.remove("next");
+    carouselDom.classList.remove("prev");
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    next.click();
+  }, timeAutoNext);
 }
 
-
-
-// navbar script 
+// navbar script
 
 let navbar = document.querySelector(".nav-items");
 
 let close = document.getElementById("close");
 let open = document.getElementById("navbars");
-
-
-
-
 
 open.addEventListener("click", () => {
   shownav(navbar);
@@ -69,10 +65,6 @@ close.addEventListener("click", () => {
   hidenav(navbar);
 });
 
-
-
-
-
 function shownav(navbar) {
   navbar.style.visibility = "visible";
   open.style.visibility = "hidden";
@@ -80,7 +72,30 @@ function shownav(navbar) {
 }
 
 function hidenav(navbar) {
-    navbar.style.visibility = "hidden";
-    open.style.visibility = "visible";
-    close.style.visibility = "hidden";
+  navbar.style.visibility = "hidden";
+  open.style.visibility = "visible";
+  close.style.visibility = "hidden";
 }
+
+
+// submenu script 
+
+let servicebtn = document.querySelector(".opensub");
+let submenu = document.querySelector(".submenu");
+
+servicebtn.addEventListener("mouseenter", () => {
+    showsubmenu(submenu)
+});
+
+servicebtn.addEventListener("mouseleave", () => {
+  hidesubmenu(submenu);
+});
+
+function showsubmenu(submenu) {
+  submenu.style.visibility = "visible";
+}
+
+function hidesubmenu(submenu) {
+  submenu.style.visibility = "hidden";
+}
+
