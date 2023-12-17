@@ -78,24 +78,3 @@ function hidenav(navbar) {
 }
 
 
-// submenu script 
-
-let servicebtn = document.querySelector(".opensub");
-let submenu = document.querySelector(".submenu");
-
-servicebtn.addEventListener("mouseenter", () => {
-    showsubmenu(submenu)
-});
-
-servicebtn.addEventListener("mouseleave", () => {
-  hidesubmenu(submenu);
-});
-
-function showsubmenu(submenu) {
-  submenu.style.visibility = "visible";
-}
-
-function hidesubmenu(submenu) {
-  submenu.style.visibility = "hidden";
-}
-

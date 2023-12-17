@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body {
+* {
   margin: 0;
   font-family: Poppins;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -21,7 +22,7 @@ body {
 }
 
 hr {
-  border: 3px solid var(--third-color);
+  border: 3px solid var(--primary-heading);
   width: 200px;
   margin: 30px auto;
 }
@@ -56,7 +57,8 @@ header.black {
   background-color: var(--white);
 }
 
-header.black a,header.black li {
+header.black a,
+header.black li {
   color: var(--primary-heading);
   font-weight: 500;
 }
@@ -79,7 +81,7 @@ header.black a,header.black li {
   color: var(--white);
 }
 
-.submenu{
+.submenu {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -93,7 +95,7 @@ header.black a,header.black li {
   visibility: hidden;
 }
 
-.submenu a:hover{
+.submenu a:hover {
   letter-spacing: 1px;
 }
 
@@ -101,7 +103,6 @@ header.black a,header.black li {
   display: flex;
   gap: 40px;
 }
-
 
 /* carousel */
 .carousel {
@@ -149,6 +150,8 @@ header.black a,header.black li {
 }
 .carousel .list .item .buttons {
   display: grid;
+
+
   grid-template-columns: repeat(2, 130px);
   grid-template-rows: 40px;
   gap: 5px;
@@ -401,7 +404,7 @@ header.black a,header.black li {
 .aboutus {
   max-width: 1000px;
   margin: auto;
-  padding: 100px 0px;
+  padding: 100px 20px;
   text-align: center;
 }
 
@@ -458,8 +461,8 @@ header.black a,header.black li {
 }
 
 .special img {
-  width: 50%;
-  /* margin-bottom: 30px; */
+  width: 80%;
+  margin-bottom: 30px;
 }
 
 .special > div > div > p:nth-child(2) {
@@ -552,10 +555,10 @@ header.black a,header.black li {
 }
 
 .service_cont button {
-  background-color: var(--third-color);
+  background-color: var(--primary-heading);
   color: var(--white);
   border: none;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   padding: 10px 20px;
   border-radius: 10px 0px;
 }
@@ -567,6 +570,47 @@ header.black a,header.black li {
 }
 
 .service_cont button:hover {
-  background-color: var(--dark);
+  background-color: var(--secondry-color);
   color: var(--white);
+}
+
+/* footer section  */
+
+#footer {
+  padding: 50px 20px;
+  background-color: var(--primary-heading);
+  color: var(--white);
+}
+
+#footer > div {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+#footer > div > div {
+  display: grid;
+  align-content: flex-start;
+  gap: 10px;
+  max-width: 250px;
+}
+
+#footer > div > div>p:nth-child(1){
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+#copyright{
+  padding: 10px 20px;
+  background-color: var(--secondry-color);
+  color: var(--white);
+  display: flex;
+  gap: 20px;
 }
